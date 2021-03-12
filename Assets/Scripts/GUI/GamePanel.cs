@@ -18,8 +18,7 @@ public class GamePanel : GenericPanel {
 		foreach (float v in values) {
 			intervalDropDown.options.Add (new Dropdown.OptionData (string.Format("{0:0.00} sec", v)));
 		}
-		intervalDropDown.value = 0;
-		intervalDropDown.value = 3;
+		intervalDropDown.value = 1;
 	}
 
 	public void IntervalDropDownValueChanged (int i) {
@@ -27,7 +26,7 @@ public class GamePanel : GenericPanel {
 	}
 
 	public void UpdateFromGame (int generation) {
-		generationText.text = "Generation: " + generation;
+		generationText.text = "Gen: " + generation;
 	}
 
 	public void StartButtonClick () {
@@ -44,10 +43,8 @@ public class GamePanel : GenericPanel {
 	private void UpdateStartButton () {
 		if (gui.engine.state == CellEngine.States.Idle) {
 			startButtonText.text = "Start";
-			startButtonImage.color = Color.green;
 		} else {
 			startButtonText.text = "Stop";
-			startButtonImage.color = Color.red;
 		}
 	}
 

@@ -27,12 +27,12 @@ public class StartPanel : GenericPanel {
 	}
 
 	public void SpawningFinish () {
-		Invoke ("StartGame", 2f);
-		gui.cam.MoveToCenter (gui.spawner.size);
+		Invoke ("StartGame", 1f);
 	}
 
 	public void StartGame () {
 		gui.ShowPanel (1);
+		gui.cam.MoveToCenter(gui.spawner.size);
 	}
 
 	public void StartButtonClick () {
